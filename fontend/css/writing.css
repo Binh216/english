@@ -1,0 +1,13 @@
+.writing-placeholder {
+  padding: 40px;
+  text-align: center;
+}
+
+.writing-placeholder h1 {
+  margin-bottom: 16px;
+}
+
+.writing-placeholder p {
+  color: var(--text-dim);
+  line-height: 1.6;
+}

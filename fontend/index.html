@@ -11,7 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/listening.css">
+    <link rel="stylesheet" href="css/speaking.css">
+    <link rel="stylesheet" href="css/reading.css">
+    <link rel="stylesheet" href="css/writing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -43,9 +48,18 @@
                 </div>
 
                 <div class="nav-actions">
-                    <button class="btn btn-outline" style="border-radius: 50px; padding: 10px 20px; font-size: 0.85rem;">
-                        <i class="fas fa-user-circle"></i> Profile
-                    </button>
+                    <a href="#" class="nav-item" data-skill="login">
+                        <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                    </a>
+                    <a href="#" class="nav-item" data-skill="register">
+                        <i class="fas fa-user-plus"></i> Đăng ký
+                    </a>
+                    <a href="#" class="nav-item hidden" data-skill="profile">
+                        <i class="fas fa-user-circle"></i> Tài khoản
+                    </a>
+                    <a href="#" class="nav-item hidden" data-skill="logout">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
                 </div>
             </div>
         </nav>
@@ -59,6 +73,6 @@
     </div>
 
     <!-- Core App Logic -->
-    <script src="js/main.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>

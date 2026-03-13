@@ -1,0 +1,13 @@
+.speaking-placeholder {
+  padding: 40px;
+  text-align: center;
+}
+
+.speaking-placeholder h1 {
+  margin-bottom: 16px;
+}
+
+.speaking-placeholder p {
+  color: var(--text-dim);
+  line-height: 1.6;
+}

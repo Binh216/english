@@ -10,7 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
-    
+
     /* Layout Tokens */
     --radius-xl: 24px;
     --radius-lg: 16px;
@@ -41,14 +41,18 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg-body); }
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-/* --- App Container --- */
+/* --- Utility --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Layout --- */
 .app-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* --- Navigation (Floating Glass) --- */
 .navbar {
     position: fixed;
     top: 20px;
@@ -83,6 +87,7 @@ body {
     background: linear-gradient(to right, #fff, var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
 .logo-icon {
@@ -113,6 +118,7 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.95rem;
+    cursor: pointer;
 }
 
 .nav-item i { font-size: 1.1rem; }
@@ -127,7 +133,6 @@ body {
     box-shadow: var(--shadow-neon);
 }
 
-/* --- Main Content Area --- */
 .main-content {
     margin-top: 120px;
     padding: 0 20px 40px;
@@ -147,7 +152,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Cards (Modules) --- */
 .module-card {
     background: var(--bg-card);
     backdrop-filter: blur(30px);
@@ -188,7 +192,6 @@ body {
     font-size: 1rem;
 }
 
-/* --- Buttons --- */
 .btn {
     padding: 14px 28px;
     border-radius: 14px;
@@ -225,182 +228,6 @@ body {
     border-color: var(--text-dim);
 }
 
-/* --- Dashboard Enhanced Components --- */
-.stats-container {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-}
-
-.chart-card, .goals-card {
-    background: var(--bg-card);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    padding: 24px;
-}
-
-.chart-placeholder {
-    height: 200px;
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    align-items: flex-end;
-    gap: 15px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.chart-bar {
-    flex: 1;
-    background: linear-gradient(to top, var(--primary), var(--secondary));
-    border-radius: 6px 6px 0 0;
-    position: relative;
-    animation: growBar 1s ease-out forwards;
-    transform-origin: bottom;
-}
-
-@keyframes growBar {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
-}
-
-.chart-bar::after {
-    content: attr(data-day);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.7rem;
-    color: var(--text-dim);
-}
-
-/* Progress Bars */
-.skill-progress-item {
-    margin-bottom: 20px;
-}
-
-.progress-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-.progress-track {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    background: var(--primary);
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--primary-glow);
-    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Daily Goals */
-.goal-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    margin-bottom: 10px;
-    transition: var(--transition-smooth);
-}
-
-.goal-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.goal-status {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--text-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.goal-item.done .goal-status {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    font-size: 0.7rem;
-}
-
-.goal-item.done span {
-    text-decoration: line-through;
-    color: var(--text-dim);
-}
-
 @media (max-width: 900px) {
     .stats-container { grid-template-columns: 1fr; }
 }
-
-/* --- Components Specific --- */
-.audio-widget {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 16px;
-    margin-bottom: 30px;
-}
-
-.transcript-panel {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 15px;
-    border-left: 4px solid var(--primary);
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-.question-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--glass-border);
-    padding: 24px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-}
-
-.option-btn {
-    display: block;
-    width: 100%;
-    padding: 16px 20px;
-    margin-top: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    color: var(--text-dim);
-    text-align: left;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.option-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.option-btn.selected {
-    background: rgba(139, 92, 246, 0.1);
-    border-color: var(--primary);
-    color: #fff;
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .navbar { width: 95%; top: 10px; padding: 0 15px; }
-    .nav-links { display: none; } /* Sẽ dùng Mobile Menu riêng */
-    .dashboard-grid { grid-template-columns: 1fr; }
-    .module-card { padding: 25px; }
-    .section-title { font-size: 1.8rem; }
-}
-
-.hidden { display: none; }

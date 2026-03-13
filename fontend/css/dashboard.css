@@ -1,0 +1,111 @@
+.stats-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.chart-card, .goals-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+}
+
+.chart-placeholder {
+    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chart-bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--primary), var(--secondary));
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    animation: growBar 1s ease-out forwards;
+    transform-origin: bottom;
+}
+
+@keyframes growBar {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+.chart-bar::after {
+    content: attr(data-day);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+.skill-progress-item {
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.progress-track {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--primary-glow);
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 10px;
+    transition: var(--transition-smooth);
+}
+
+.goal-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.goal-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--text-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-item.done .goal-status {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+}
+
+.goal-item.done span {
+    text-decoration: line-through;
+    color: var(--text-dim);
+}

@@ -1,0 +1,13 @@
+.reading-placeholder {
+  padding: 40px;
+  text-align: center;
+}
+
+.reading-placeholder h1 {
+  margin-bottom: 16px;
+}
+
+.reading-placeholder p {
+  color: var(--text-dim);
+  line-height: 1.6;
+}

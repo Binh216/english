@@ -1,0 +1,13 @@
+diff --git a/node_modules/tr46/index.js b/node_modules/tr46/index.js
+index 7ce0532..c335ab3 100644
+--- a/node_modules/tr46/index.js
++++ b/node_modules/tr46/index.js
+@@ -1,6 +1,7 @@
+ "use strict";
+ 
+-const punycode = require("punycode");
++// Use the npm `punycode` package instead of the deprecated Node.js core module.
++const punycode = require("punycode/");
+ const regexes = require("./lib/regexes.js");
+ const mappingTable = require("./lib/mappingTable.json");
+ const { STATUS_MAPPING } = require("./lib/statusMapping.js");
