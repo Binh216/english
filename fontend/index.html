@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngFlow AI | Next-Gen Learning Platform</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Floating Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                    <span>EngFlow</span>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#" class="nav-item active" data-skill="dashboard">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                    <a href="#" class="nav-item" data-skill="listening">
+                        <i class="fas fa-headphones"></i> Listening
+                    </a>
+                    <a href="#" class="nav-item" data-skill="speaking">
+                        <i class="fas fa-microphone"></i> Speaking
+                    </a>
+                    <a href="#" class="nav-item" data-skill="reading">
+                        <i class="fas fa-book-open"></i> Reading
+                    </a>
+                    <a href="#" class="nav-item" data-skill="writing">
+                        <i class="fas fa-pen-nib"></i> Writing
+                    </a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="btn btn-outline" style="border-radius: 50px; padding: 10px 20px; font-size: 0.85rem;">
+                        <i class="fas fa-user-circle"></i> Profile
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dynamic Content Area -->
+        <main class="main-content">
+            <div id="content-area" class="content-area">
+                <!-- Modules will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Core App Logic -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
